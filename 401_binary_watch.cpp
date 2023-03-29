@@ -8,14 +8,14 @@ using namespace std;
 
 vector<string> readBinaryWatch(int turnedOn) {
     vector<string> result;
-    for(int h=0;h<12;h++){
-        for(int m=0;m<60;m++){
-            bitset<6>bh(h);
+    for(int h=0;h<12;h++){   // this loop run for hours
+        for(int m=0;m<60;m++){     // this loop run for minutes
+            bitset<6>bh(h);  // it convert the number into binary
             bitset<6>bm(m);
-            if((bh.count())+(bm.count())==turnedOn){
+            if((bh.count())+(bm.count())==turnedOn){  // count function count the number of ones of hour and minute
                 string ans;
                 if(m>9){
-                    stringstream ss;
+                    stringstream ss;    // it helps to format the string, ex = "2:30"
                     ss<<h<<":"<<m;
                     ans = ss.str();
                 }
